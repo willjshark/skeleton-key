@@ -1,6 +1,11 @@
 let page = document.getElementById("buttonDiv");
 let selectedClassName = "current";
-const presetButtonColors = ["#3aa757", "#e8453c", "#f9bb2d", "#4688f1"];
+const presetLinks = [
+  "https://www.bbc.co.uk/",
+  "https://www.bbc.co.uk/food/recipes",
+  "https://www.thesaurus.com/",
+  "https://github.com/login",
+];
 
 // Reacts to a button click by marking the selected button and saving
 // the selection
@@ -43,4 +48,4 @@ function constructOptions(buttonColors) {
 }
 
 // Initialize the page by constructing the color options
-constructOptions(presetButtonColors);
+constructOptions(presetLinks);
