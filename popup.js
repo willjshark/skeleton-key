@@ -1,5 +1,12 @@
-let openLink = document.getElementById("openLink");
+let workKey = document.getElementById("workKey");
 
-chrome.storage.sync.get("link", ({ link }) => {
-  openLink.href = link;
-});
+workKey.addEventListener("click", openTwoLinks);
+
+function openTwoLinks() {
+  console.log("hello");
+  chrome.storage.sync.get("links", ({ links }) => {
+    links.forEach((link) => {
+      chrome.tabs.create({ url: link });
+    });
+  });
+}

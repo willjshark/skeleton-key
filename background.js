@@ -1,6 +1,6 @@
-let link = "https://github.com/login";
+let links = ["https://github.com/login", "https://www.bbc.co.uk/"];
 
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.sync.set({ link });
-  console.log(`Default url set to ${link}`);
+  chrome.storage.sync.set({ links });
+  console.log(`links defined`);
 });
