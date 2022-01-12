@@ -8,5 +8,5 @@ let socialLinks = [
 
 chrome.runtime.onInstalled.addListener(() => {
   chrome.storage.sync.set({ workLinks, socialLinks });
-  console.log(`work links defined`);
-});
+   console.log(`work links defined`);
+ });
