@@ -7,24 +7,27 @@ const presetLinks = [
   "https://github.com/login",
 ];
 
-// Reacts to a button click by marking the selected button and saving
-// the selection
-// function handleButtonClick(event) {
-//   // Remove styling from the previously selected color
-//   let current = event.target.parentElement.querySelector(
-//     `.${selectedClassName}`
-//   );
-//   if (current && current !== event.target) {
-//     current.classList.remove(selectedClassName);
-//   }
+function openLinks(e) {
+  console.log(e.target.innerText);
 
-//   // Mark the button as selected
-//   let color = event.target.dataset.color;
-//   event.target.classList.add(selectedClassName);
-//   chrome.storage.sync.set({ color });
-// }
+  let keyName = e.target.innerText;
+  if (keyName == "work") {
+    chrome.storage.sync.get("workLinks", ({ workLinks }) => {
+      createTabs(workLinks);
+    });
+  } else if (keyName == "social") {
+    chrome.storage.sync.get("socialLinks", ({ socialLinks }) => {
+      createTabs(socialLinks);
+    });
+  }
+}
 
-// Add a button to the page for each supplied color
+function createTabs(links) {
+  links.forEach((link) => {
+    chrome.tabs.create({ url: link });
+  });
+}
+
 function constructOptions() {
   chrome.storage.sync.get("keys", (data) => {
     let currentKeys = data.keys;
@@ -35,6 +38,8 @@ function constructOptions() {
       let button = document.createElement("button");
       button.innerText = key;
       console.log(key);
+
+      button.addEventListener("click", openLinks);
 
       page.appendChild(button);
     }
