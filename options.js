@@ -7,45 +7,44 @@ const presetLinks = [
   "https://github.com/login",
 ];
 
-// Reacts to a button click by marking the selected button and saving
-// the selection
-function handleButtonClick(event) {
-  // Remove styling from the previously selected color
-  let current = event.target.parentElement.querySelector(
-    `.${selectedClassName}`
-  );
-  if (current && current !== event.target) {
-    current.classList.remove(selectedClassName);
-  }
+function openLinks(e) {
+  console.log(e.target.innerText);
 
-  // Mark the button as selected
-  let color = event.target.dataset.color;
-  event.target.classList.add(selectedClassName);
-  chrome.storage.sync.set({ color });
+  let keyName = e.target.innerText;
+  if (keyName == "work") {
+    chrome.storage.sync.get("workLinks", ({ workLinks }) => {
+      createTabs(workLinks);
+    });
+  } else if (keyName == "social") {
+    chrome.storage.sync.get("socialLinks", ({ socialLinks }) => {
+      createTabs(socialLinks);
+    });
+  }
 }
 
-// Add a button to the page for each supplied color
-function constructOptions(buttonColors) {
-  chrome.storage.sync.get("color", (data) => {
-    let currentColor = data.color;
+function createTabs(links) {
+  links.forEach((link) => {
+    chrome.tabs.create({ url: link });
+  });
+}
+
+function constructOptions() {
+  chrome.storage.sync.get("keys", (data) => {
+    let currentKeys = data.keys;
+    console.log(currentKeys);
     // For each color we were provided…
-    for (let buttonColor of buttonColors) {
+    for (let key in currentKeys) {
       // …create a button with that color…
       let button = document.createElement("button");
-      button.dataset.color = buttonColor;
-      button.style.backgroundColor = buttonColor;
+      button.innerText = key;
+      console.log(key);
 
-      // …mark the currently selected color…
-      if (buttonColor === currentColor) {
-        button.classList.add(selectedClassName);
-      }
+      button.addEventListener("click", openLinks);
 
-      // …and register a listener for when that button is clicked
-      button.addEventListener("click", handleButtonClick);
       page.appendChild(button);
     }
   });
 }
 
 // Initialize the page by constructing the color options
-constructOptions(presetLinks);
+constructOptions();
