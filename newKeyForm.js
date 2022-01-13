@@ -12,5 +12,6 @@ function addKey(e) {
   chrome.storage.sync.get("keys", ({ keys }) => {
     keys[name] = [];
     chrome.storage.sync.set({ keys });
+    document.forms[0].reset();
   });
 }

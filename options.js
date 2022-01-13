@@ -28,6 +28,12 @@ function createTabs(links) {
   });
 }
 
+function openEdit(e) {
+  currentKey = e.target.innerText
+  chrome.storage.sync.set({currentKey});
+  window.location.href = "./edit.html"
+}
+
 function constructOptions() {
   chrome.storage.sync.get("keys", (data) => {
     let currentKeys = data.keys;
@@ -37,9 +43,11 @@ function constructOptions() {
       // …create a button with that color…
       let button = document.createElement("button");
       button.innerText = key;
+      button.id = key;
       console.log(key);
+      
 
-      button.addEventListener("click", openLinks);
+      button.addEventListener("click", openEdit);
 
       page.appendChild(button);
     }
