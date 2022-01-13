@@ -6,7 +6,9 @@ let socialLinks = [
   "https://telegram.org/",
 ];
 
+let keys = { work: workLinks, social: socialLinks };
+
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.sync.set({ workLinks, socialLinks });
-   console.log(`work links defined`);
- });
+  chrome.storage.sync.set({ workLinks, socialLinks, keys });
+  console.log(`work links defined`);
+});
