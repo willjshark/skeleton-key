@@ -25,19 +25,17 @@ const presetLinks = [
 // }
 
 // Add a button to the page for each supplied color
-function constructOptions {
+function constructOptions() {
   chrome.storage.sync.get("keys", (data) => {
     let currentKeys = data.keys;
-    console.log(currentKeys)
+    console.log(currentKeys);
     // For each color we were provided…
     for (let key in currentKeys) {
       // …create a button with that color…
       let button = document.createElement("button");
-      button.innerText = key[0]
-      console.log(key)
+      button.innerText = key;
+      console.log(key);
 
-      // …and register a listener for when that button is clicked
-      button.addEventListener("click", handleButtonClick);
       page.appendChild(button);
     }
   });
