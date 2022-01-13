@@ -1,5 +1,5 @@
 {
-  "name": "TEST",
+  "name": "Skeleton Key",
   "description": "Testing ",
   "version": "1.0",
   "manifest_version": 3,
@@ -9,6 +9,10 @@
   },
   "permissions": ["storage", "tabs"],
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/images/skeleton.png"
+  },
+  "icons": { "16": "/images/skeleton.png"
   }
-}
+  }}
