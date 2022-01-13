@@ -1,14 +1,16 @@
-let new_url = document.getElementById("new_url");
+let button_press = document.getElementById("btn");
 
-new_url.addEventListener("click", addingUrl);
+button_press.addEventListener("click", addingUrl);
 
-function addingUrl() {
+function addingUrl(ev) {
+ev.preventDefault();
 chrome.storage.sync.get("workLinks", ({ workLinks }) => {
-    console.log(workLinks)
-    workLinks.push("https://en-gb.facebook.com/")
-    console.log(workLinks)
+    let input_url = document.getElementById("new_url").value;
+
+    workLinks.push(input_url);
+    
    chrome.storage.sync.set({workLinks});
-   console.log(workLinks)
+   document.forms[0].reset();
   });
 }
 
