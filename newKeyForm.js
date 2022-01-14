@@ -14,4 +14,5 @@ function addKey(e) {
     chrome.storage.sync.set({ keys });
     document.forms[0].reset();
   });
+  window.location.href = "./options.html"
 }

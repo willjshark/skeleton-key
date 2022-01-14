@@ -1,6 +1,9 @@
 
 let keyEdit = document.getElementById("keyEdit");
+let deleteKeyButton = document.getElementById("deleteKey");
 let page = document.getElementById("allBits");
+
+deleteKeyButton.addEventListener("click", deleteKey);
 keyEdit.addEventListener("click", addingUrl);
 
 function addingUrl(ev) {
@@ -12,11 +15,11 @@ keys[currentKey].push(input_url);
 chrome.storage.sync.set({keys});
 document.forms[0].reset();
 });
-  
+window.location.reload(true)
 })
 
-
 }
+
 function displayBits(page) {
     chrome.storage.sync.get("keys", ({ keys }) => {
     chrome.storage.sync.get("currentKey", ({ currentKey }) => {
@@ -47,8 +50,18 @@ function displayBits(page) {
     chrome.storage.sync.set({keys})
     })
     
-    
+    window.location.reload(true)
     console.log(keys);
 })}
+
+function deleteKey() {
+    chrome.storage.sync.get("keys", ({ keys }) => {
+    chrome.storage.sync.get("currentKey", ({ currentKey }) => {
+        delete keys[currentKey]
+    chrome.storage.sync.set({keys})
+    window.location.href = "./options.html"
+    })
+    })
+ }
 
     displayBits(page)
