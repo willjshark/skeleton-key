@@ -15,7 +15,7 @@ function addingUrl(ev) {
         chrome.storage.sync.set({ keys });
         document.forms[0].reset();
       } else {
-        alert("not valid url");
+        alert("Not Valid URL");
       }
     });
     window.location.reload(true);
