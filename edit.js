@@ -44,7 +44,7 @@ function displayBits(page) {
         let button = document.createElement("button");
         button.id = bit;
         button.innerText = "Delete";
-        button.classList.add("btn", "btn-secondary", "btn-sm");
+        button.classList.add("btn", "btn-secondary", "btn-sm", "m-4");
         button.addEventListener("click", deleteBit);
 
         div.appendChild(p);

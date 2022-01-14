@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+  
+ 
   <head>
+    <img src="images/skeleton.png" class="rounded-circle" style="max-width:9%" alt="...">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&family=Roboto+Mono:ital,wght@1,300&family=Shippori+Antique&family=Shippori+Antique+B1&display=swap" rel="stylesheet">
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,14 +16,24 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-
-    <title>Add a new url</title>
+    <style>
+      h1 {
+        font-family: 'Roboto Mono', monospace;
+        color: #777777;
+        text-align: left;
+      }
+      p {
+        font-family: 'Roboto Mono', monospace;
+        color: #777777;
+        text-align: left;
+      }
+    </style>
+    <h1 class="text-center p-1">Edit Key</h1>
   </head>
-  <body class="bg-success p-2 text-dark bg-opacity-50">
-    <h1 class="text-center p-5">Edit Key</h1>
+   <body class="p-3 mb-2 bg-light text-dark">
     <form class="container">
       <div class="mb-3">
-        <label for="title" class="form-label">Add Bit to Key</label>
+        <p for="title" class="form-label">Add Bit to Key</p>
         <input
           type="text"
           class="form-control"
@@ -29,10 +45,11 @@
     </form>
 
     <div class="container" id="allBits"></div>
+    <br>
     <div class="container mt-2">
       <button id="deleteKey" class="btn btn-secondary">Delete key</button>
     </div>
-
+  </br>
     <script src="edit.js"></script>
   </body>
 </html>
