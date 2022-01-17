@@ -7,6 +7,7 @@ function constructToDos(page) {
       // …create a button with that color…
       let todoItem = document.createElement("li");
       todoItem.innerText = toDos[todo];
+      todoItem.className = "LI"
       todoItem.id = todo;
       console.log(todo);
       

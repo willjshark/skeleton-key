@@ -7,7 +7,7 @@ let socialLinks = [
 ];
 
 let keys = { work: workLinks, social: socialLinks };
-let todos = ["finish coding todos", "style skeleton-key extension"];
+let todos = [];
 
 chrome.runtime.onInstalled.addListener(() => {
   chrome.storage.sync.set({ keys });

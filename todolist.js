@@ -2,10 +2,11 @@ import { constructToDos } from './modules/constructToDos.js';
 let page = document.getElementById("myUL");
 let newtask = document.getElementById("newtask");
 newtask.addEventListener("click", newElement);
+constructToDos(page);
 
 
 //create a close button and append it to items on list
-var myNodelist = document.getElementsByTagName("LI");
+var myNodelist = document.getElementById("myUL");
 var i;
 for (i = 0; i < myNodelist.length; i++) {
   var span = document.createElement("SPAN");
@@ -40,6 +41,7 @@ list.addEventListener('click', function(ev) {
 // Create a new list item when clicking on the "Add" button
 function newElement() {
   var newtodoItem = document.createElement("li");
+  newtodoItem.className = "LI";
   var inputValue = document.getElementById("myInput").value;
   var t = document.createTextNode(inputValue);
   newtodoItem.appendChild(t);
@@ -54,7 +56,7 @@ function newElement() {
   var txt = document.createTextNode("\u00D7");
   span.className = "close";
   span.appendChild(txt);
-  li.appendChild(span);
+  newtodoItem.appendChild(span);
 
   for (i = 0; i < close.length; i++) {
     close[i].onclick = function() {
@@ -62,5 +64,3 @@ function newElement() {
       div.style.display = "none";
     }
   }}
-
-constructToDos(page);
