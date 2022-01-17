@@ -1,3 +1,9 @@
+import { constructToDos } from './modules/constructToDos.js';
+let page = document.getElementById("myUL");
+let newtask = document.getElementById("newtask");
+newtask.addEventListener("click", newElement);
+
+
 //create a close button and append it to items on list
 var myNodelist = document.getElementsByTagName("LI");
 var i;
@@ -33,14 +39,14 @@ list.addEventListener('click', function(ev) {
 
 // Create a new list item when clicking on the "Add" button
 function newElement() {
-  var li = document.createElement("li");
+  var newtodoItem = document.createElement("li");
   var inputValue = document.getElementById("myInput").value;
   var t = document.createTextNode(inputValue);
-  li.appendChild(t);
+  newtodoItem.appendChild(t);
   if (inputValue === '') {
     alert("You must write something!");
   } else {
-    document.getElementById("myUL").appendChild(li);
+    document.getElementById("myUL").appendChild(newtodoItem);
   }
   document.getElementById("myInput").value = "";
 
@@ -56,3 +62,5 @@ function newElement() {
       div.style.display = "none";
     }
   }}
+
+constructToDos(page);

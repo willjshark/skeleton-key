@@ -25,4 +25,5 @@ function openEdit(e) {
 }
 // Initialize the page by constructing the color options
 constructOptions(page);
+<a href="todolist.html"> <input type="button" value="ToDo list">To do list</input> </a>
 export { openEdit };

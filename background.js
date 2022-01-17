@@ -7,8 +7,14 @@ let socialLinks = [
 ];
 
 let keys = { work: workLinks, social: socialLinks };
+let todos = ["finish coding todos", "style skeleton-key extension"];
 
 chrome.runtime.onInstalled.addListener(() => {
   chrome.storage.sync.set({ keys });
   console.log(`work links defined`);
+});
+
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.storage.sync.set({ todos });
+  console.log(`todos created`);
 });
