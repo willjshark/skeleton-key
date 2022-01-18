@@ -44,11 +44,12 @@ function displayBits(page) {
         let button = document.createElement("button");
         button.id = bit;
         button.innerText = "Delete";
-        button.classList.add("btn", "btn-secondary", "btn-sm", "m-4");
+        button.className = "btn btn-secondary btn-sm fw-bolder";
         button.addEventListener("click", deleteBit);
 
-        div.appendChild(p);
+        
         div.appendChild(button);
+        div.appendChild(p);
 
         page.appendChild(div);
       }

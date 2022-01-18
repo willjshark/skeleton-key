@@ -17,6 +17,7 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="style.css" />
     <style>
       h1 {
         font-family: 'Roboto Mono', monospace;
@@ -31,7 +32,7 @@
     </style>
     <h1 class="text-center p-1">Edit Key</h1>
   </head>
-   <body class="p-3 mb-2 bg-light text-dark">
+   <body class="p-3 mb-2 bg-light text-dark wrapper">
     <form class="container">
       <div class="mb-3">
         <p for="title" class="form-label">Add Bit to Key</p>
@@ -42,13 +43,13 @@
           placeholder="http://example.com"
         />
       </div>
-      <button type="button" class="btn btn-secondary" id="keyEdit">Add</button>
+      <button type="button" class="btn btn-secondary fw-bolder" id="keyEdit">Add</button>
     </form>
 
     <div class="container" id="allBits"></div>
     <br>
     <div class="container mt-2">
-      <button id="deleteKey" class="btn btn-secondary">Delete key</button>
+      <button id="deleteKey" class="btn-lg btn-secondary fw-bolder" value="Delete key"></button>
     </div>
   </br>
     <script src="edit.js"></script>

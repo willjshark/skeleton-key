@@ -10,7 +10,8 @@ function constructOptions(page) {
         let button = document.createElement("button");
         button.innerText = key;
         button.id = key;
-        console.log(key);
+        button.className = "btn btn-warning btn-sm fw-bolder";
+        
         
   
         button.addEventListener("click", openEdit);
