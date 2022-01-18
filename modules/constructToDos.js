@@ -10,6 +10,7 @@ function constructToDos(page) {
       todoItem.className = "LI"
       todoItem.id = todo;
       console.log(todo);
+      console.log(todo);
       
 
       //button.addEventListener("click", openEdit);
