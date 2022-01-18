@@ -1,17 +1,17 @@
 function constructToDos(page) {
-  chrome.storage.sync.get("todos", (data) => {
-    let toDos = data.todos;
-    console.log(toDos);
+  chrome.storage.sync.get("todos", ({ todos }) => {
+    console.log(todos);
     // For each color we were provided…
-    for (let todo in toDos) {
+    for (let todo in todos) {
       // …create a button with that color…
       let todoItem = document.createElement("li");
-      todoItem.innerText = toDos[todo];
-      todoItem.className = "LI"
+      todoItem.innerText = todos[todo].text;
+      todoItem.className = "LI";
       todoItem.id = todo;
-      console.log(todo);
-      console.log(todo);
-      
+      if (todos[todo].checked == true) {
+        console.log("am checked");
+        todoItem.classList.add("checked");
+      }
 
       //button.addEventListener("click", openEdit);
 
@@ -20,5 +20,4 @@ function constructToDos(page) {
   });
 }
 
-
-  export { constructToDos };
+export { constructToDos };

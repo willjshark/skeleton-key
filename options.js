@@ -1,4 +1,4 @@
-import { constructOptions } from './modules/constructOptions.js';
+import { constructOptions } from "./modules/constructOptions.js";
 let page = document.getElementById("buttonDiv");
 function openLinks(e) {
   console.log(e.target.innerText);
@@ -19,11 +19,18 @@ function createTabs(links) {
   });
 }
 function openEdit(e) {
-  let currentKey = e.target.innerText
-  chrome.storage.sync.set({currentKey});
-  window.location.href = "./edit.html"
+  let currentKey = e.target.innerText;
+  chrome.storage.sync.set({ currentKey });
+  window.location.href = "./edit.html";
 }
 // Initialize the page by constructing the color options
 constructOptions(page);
-<a href="todolist.html"> <input type="button" value="ToDo list">To do list</input> </a>
+
+/* <a href="todolist.html">
+  {" "}
+  <input type="button" value="ToDo list">
+    To do list
+  </input>{" "}
+</a>; */
+
 export { openEdit };
