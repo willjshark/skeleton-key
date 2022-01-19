@@ -8,16 +8,17 @@
 
 ### User Stories
 
-### Model
-
-## How to Run
+## How to Use
 
 ## Testing
+
+n/a
 
 ## Screenshots
 
 ## Tech Used
 
-- Rails
-- Ruby
-- Rspec
+- JavaScript
+- HTML
+- CSS
+- Bootstrap
