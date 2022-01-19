@@ -14,6 +14,7 @@ button {
   margin: 10px;
   border: none;
   border-radius: 2px;
+  word-wrap: break-word;
 }
 
 button.current {
