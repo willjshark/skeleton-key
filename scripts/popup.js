@@ -1,4 +1,4 @@
-// import { constructOptions } from './modules/constructOptions.js';
+// import { constructOptions } from '../modules/constructOptions.js';
 
 let page = document.getElementById("buttonDiv");
 
@@ -11,9 +11,8 @@ function constructOptions(page) {
       button.innerText = key;
       button.id = key;
       button.className = "btn btn-info btn-sm fw-bolder";
-      
+
       console.log(key);
-      
 
       button.addEventListener("click", openLinks);
 
@@ -23,14 +22,12 @@ function constructOptions(page) {
 }
 
 function openLinks(e) {
-    chrome.storage.sync.get("keys", ({ keys }) => {
-     let keyName = e.target.innerText
-     console.log(keyName)
-    createTabs(keys[keyName])
-     });
-      
-    }
-
+  chrome.storage.sync.get("keys", ({ keys }) => {
+    let keyName = e.target.innerText;
+    console.log(keyName);
+    createTabs(keys[keyName]);
+  });
+}
 
 function createTabs(links) {
   links.forEach((link) => {
@@ -38,4 +35,4 @@ function createTabs(links) {
   });
 }
 
-constructOptions(page)
+constructOptions(page);

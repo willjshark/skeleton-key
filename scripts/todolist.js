@@ -1,4 +1,4 @@
-import { constructToDos } from "./modules/constructToDos.js";
+import { constructToDos } from "../modules/constructToDos.js";
 let page = document.getElementById("myUL");
 let newtask = document.getElementById("newtask");
 let deleteList = document.getElementById("deleteList");
@@ -86,14 +86,7 @@ function newElement() {
     }
     document.getElementById("myInput").value = "";
 
-    var span = document.createElement("SPAN");
-    var txt = document.createTextNode("\u00D7");
-    span.className = "close";
-    span.appendChild(txt);
-    // newtodoItem.appendChild(span);
-    var i;
-
-    for (i = 0; i < close.length; i++) {
+    for (let i = 0; i < close.length; i++) {
       close[i].onclick = function () {
         var div = this.parentElement;
         div.style.display = "none";
