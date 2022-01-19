@@ -32,7 +32,7 @@ button.current {
 .wrapper2 {
   height: 200px;
   width: 450px;
-  background-color: #b3e5fc;
+  background-color: #33b5e5;
   border-radius: 2px;
 }
 
@@ -60,7 +60,7 @@ body {
     position: relative;
     padding: 12px 8px 12px 40px;
     list-style-type: none;
-    background: #eee;
+    background: #e1f5fe;
     font-size: 18px;
     transition: 0.2s;
     
@@ -73,7 +73,7 @@ body {
 
   /* Set all odd list items to a different color (zebra-stripes) */
   ul li:nth-child(odd) {
-    background: #f9f9f9;
+    background: #b3e5fc;
   }
 
   /* Darker background-color on hover */
@@ -165,6 +165,11 @@ body {
     color: #777777;
     text-align: left;
   }
+  /* h1.new {
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    text-align: left;
+  } */
   p {
     font-family: 'Roboto Mono', monospace;
     color: #777777;
