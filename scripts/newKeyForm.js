@@ -17,6 +17,9 @@ function addKey(e) {
     keys[name] = [];
     chrome.storage.sync.set({ keys });
     document.forms[0].reset();
-  
-  window.location.href = "./options.html"
-}})}
+
+
+  }});
+  window.location.href = "../pages/options.html";
+}
+
