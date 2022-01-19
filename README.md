@@ -7,6 +7,22 @@
 [here](https://www.figma.com/file/wV9VPKShDEREnVd5wV5Iue/Untitled?node-id=0%3A1)
 
 ### User Stories
+```
+As a user,
+so that I can quickly load all my pages to do with a certain topic,
+I want to click one button that opens all the links
+```
+
+```
+As a user,
+so that I can customize my keys,
+I want to be able to edit my keys
+```
+```
+As a user,
+so that I can have multiple topics/categories,
+I want to create new keys
+```
 
 ## How to Use
 
