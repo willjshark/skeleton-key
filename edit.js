@@ -58,7 +58,7 @@ function displayBits(page) {
 }
 
 function deleteBit(e) {
-  alert("You deleted a Bit");
+  window.alert("You deleted a Bit");
   let bitPosition = e.target.id;
   chrome.storage.sync.get("keys", ({ keys }) => {
     chrome.storage.sync.get("currentKey", ({ currentKey }) => {
