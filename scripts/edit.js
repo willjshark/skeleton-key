@@ -47,7 +47,6 @@ function displayBits(page) {
         button.className = "btn btn-secondary btn-sm fw-bolder";
         button.addEventListener("click", deleteBit);
 
-        
         div.appendChild(button);
         div.appendChild(p);
 
@@ -77,7 +76,7 @@ function deleteKey() {
     chrome.storage.sync.get("currentKey", ({ currentKey }) => {
       delete keys[currentKey];
       chrome.storage.sync.set({ keys });
-      window.location.href = "./options.html";
+      window.location.href = "../pages/options.html";
     });
   });
 }
