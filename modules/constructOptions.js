@@ -10,7 +10,7 @@ function constructOptions(page) {
         let button = document.createElement("button");
         button.innerText = key;
         button.id = key;
-        button.className = "btn btn-warning btn-sm fw-bolder";
+        button.className = "btn btn-info btn-sm fw-bolder";
         
         
   
