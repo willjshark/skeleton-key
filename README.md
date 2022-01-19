@@ -1,6 +1,10 @@
 # Skeleton Key
 
+Skeleton Key is a Chrome Extension that allows you to easily open many grouped links in only 2 clicks.
+
 ## Approach
+
+We initially thought of making a web-app, but then decided that the product would be better as an extension.
 
 ### Mockup
 
@@ -12,7 +16,6 @@ As a user,
 so that I can quickly load all my pages to do with a certain topic,
 I want to click one button that opens all the links
 ```
-
 ```
 As a user,
 so that I can customize my keys,
