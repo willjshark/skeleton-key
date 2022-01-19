@@ -49,7 +49,7 @@ body {
   }
 
   /* Remove margins and padding from the list */
-  ul {
+  .ul {
     margin: 0;
     padding: 0;
   }
