@@ -1,4 +1,7 @@
 import { openEdit } from '../options.js';
+//import {openLinks} from '../popup.js';
+
+
 
 function constructOptions(page) {
     chrome.storage.sync.get("keys", (data) => {
@@ -12,9 +15,10 @@ function constructOptions(page) {
         button.id = key;
         button.className = "btn btn-info btn-sm fw-bolder";
         
-        
-  
-        button.addEventListener("click", openEdit);
+       // if (pagetype === "popup")
+       //   button.addEventListener("click", openLinks);
+       // else
+          button.addEventListener("click", openEdit);
   
         page.appendChild(button);
       }
