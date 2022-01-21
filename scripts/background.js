@@ -1,4 +1,4 @@
-let workLinks = ["https://github.com/login", "https://www.bbc.co.uk/"];
+let workLinks = ["https://github.com/login", "https://slack.com/intl/en-gb/"];
 
 let socialLinks = [
   "https://www.whatsapp.com/",
